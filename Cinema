@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+ <html>
+   <head>
+    <title>Red Cinema</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400&display=swap" rel="stylesheet">
+     <style>
+        body{
+          margin: 0;
+          background-color: black;
+        }
+        .navbar{
+          /*padding-left: 0%;
+          padding-right: 0%;*/
+          padding-top: 10px;
+          padding-bottom: 10px;
+          width: 100%;
+        /*max-width: 1000px;*/
+          margin: 0 auto;
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          font-family: 'Space Grotesk', sans-serif;  
+          position:fixed;
+          z-index: 9999;
+          backdrop-filter: blur(10px); 
+        }
+        a{
+          text-decoration: none;
+          color: white;
+          padding-left: 5px;
+          padding-right:5px;
+          transition: 1s;
+        }
+        a:hover{
+          background: linear-gradient(90deg, red, white);
+          -webkit-background-clip: text;
+          color: transparent;
+          border: 1px solid white;
+          border-radius: 3px;
+        }
+        .video{
+          margin:0 auto;
+          display:flex;
+          opacity: 0.7;
+          position: relative;
+          z-index: 0;
+        }
+        .container{
+          height: 100%;
+          text-align: center;
+          margin: 0px;
+          position: relative;
+        }
+        .logo{
+          background: linear-gradient(90deg, red, white);
+          -webkit-background-clip: text;
+          color: transparent;
+          font-family: 'Space Grotesk', sans-serif;
+          font-size:10vw;
+          font-weight:bold;
+          position:absolute;
+          top:40px;
+          left: 25%;
+          white-space: nowrap;
+          animation: 2s anim-lineUp ease-out;
+          z-index:1;
+        }
+        .current{
+          position:absolute;
+          top:calc(80% - 70px);
+          left:40%;
+          transform: translateX(-50%) translateY(-300% - 70px);
+          font-size: 2vw;
+          padding-left: 30px;
+          padding-right: 30px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          color: white;
+          background-color:black;
+          border: 1px solid white;
+          font-family: 'Space Grotesk', sans-serif; 
+          animation: 2s anim-lineUp ease-out;
+          transition: 0.8s;
+          z-index:1;
+          cursor: pointer;
+        }
+        .current:hover{
+        background-color:rgb(47, 47, 47);
+        }
+        .rewards{
+          color:white;
+          font-family: 'Space Grotesk', sans-serif;
+          margin-top: 10vw;
+          padding-left: 10%;
+          display:grid;
+          grid-template-columns: auto auto;
+          padding-left: 5%;
+        }
+        .text-title{
+          text-align: left;
+          margin-top: 4vw;
+          padding-right: 0% 
+        }
+        .rewards-picture{
+          width: 30vw;
+          text-align: right;
+        }
+        .rewards-title,
+        .rewards-description,
+        .rewards-picture {
+        transform: translateX(-100%);
+        opacity: 0;
+        transition: transform 1s ease, opacity 0.5s ease;
+        }
+        @keyframes anim-lineUp{
+          0% {
+            opacity: 0;
+            transform: translateY(80%);
+          }
+
+          20% {
+            opacity: 0;
+          }
+          50%{
+            opacity: 1;
+            transform: translateY(0%);
+          }
+          100%{
+            opacity: 1;
+            transform: translateY(0%);
+          }
+        }
+        @media (max-width: 1000px){
+            .rewards{
+              color:white;
+              font-family: 'Space Grotesk', sans-serif;
+              margin-top: 10vw;
+              display:flex;
+              flex-direction: column;
+              align-items: center;
+              
+          
+          }
+          
+          .text-title{
+              text-align: center;
+              margin-top: 4vw;
+          }
+        
+          .rewards-picture{
+              width: 50vw;
+              text-align: center;
+            margin-top: 2vw;
+            
+          }
+        }
+        .footer{
+          display:grid;
+          grid-template-columns: auto auto;
+          padding-left: 5%;
+          font-family: 'Space Grotesk', sans-serif;
+          margin-top: 10vw;
+          margin-bottom: 0px;
+          justify-content: space-evenly;
+        }
+      .footer-right{
+        -ms-transform: translateY(20%);
+        transform: translateY(20%);
+      }
+      .menu{
+        font-family: 'Space Grotesk', sans-serif;
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: space-evenly;
+        grid-column-gap: -200em;
+        -ms-transform: translateY(20%);
+        transform: translateY(20%);
+      }  
+     </style>
+   </head>
+
+   <body>
+    <nav class="navbar">
+       
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Blog</a>
+        <a href="#">Reserve Seats</a>
+    
+    </nav>
+    <span class="container">
+      <video class="video" width="100%" height="auto" loop="loop" muted="muted" autoplay="autoplay">
+      <source src="1063863772-preview.mp4" type="video/mp4" />
+      </video>
+      <p class="logo">Red Cinema</p>
+      <button class="current">Current Releases</button>
+    </span>
+
+    <div class="rewards">
+      <div class="text-title">
+        <h1 class="rewards-title">Do you go to the movies often?</h1>
+        <p class="rewards-description">Check out our Red Cinema Rewards <br>
+        program, with each visit you'll recieve<br>
+        points for discounts!</p>
+    </div>
+      <img class="rewards-picture"src="rewards.jpg">
+   </div>
+   <nav style="color: white;" class="footer">
+    <div class="footer-left">
+    <p>
+      395-593-4929<br>
+      redcinema@gmail.com<br>
+      3920 Red Cinema Corporate Office<br>
+      Oaktree California, 39502
+    </p>
+  </div> 
+   <div class="footer-right">
+    <a href="#"> Careers </a> <br>
+    <a href="#"> Rewards Program </a>
+    <p style="margin: 0 auto;">Copyright 2018 &copy;</p> 
+  </div> 
+  </nav>
+   <script>
+    const rewardsSection = document.querySelector('.rewards');
+    const rewardsTitle = document.querySelector('.rewards-title');
+    const rewardsDescription = document.querySelector('.rewards-description');
+    const rewardsPicture = document.querySelector('.rewards-picture');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          rewardsTitle.style.transform = 'translateX(0)';
+          rewardsTitle.style.opacity = 1;
+
+          rewardsDescription.style.transform = 'translateX(0)';
+          rewardsDescription.style.opacity = 1;
+
+          rewardsPicture.style.transform = 'translateX(0)';
+          rewardsPicture.style.opacity = 1;
+
+          observer.unobserve(entry.target); //Stop observing once animation is triggered
+        }
+      });
+    });
+
+    observer.observe(rewardsSection);
+   </script>
+   </body>
+ </html>
